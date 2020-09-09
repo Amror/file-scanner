@@ -1,0 +1,24 @@
+
+
+MainWindow {
+    background-image: url(imgs/background.png);
+}
+
+QPushButton, QPlainTextEdit {
+    background-color: white;
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #00FFFF;
+    font-family: Verdana;
+}
+
+QPushButton:hover {
+    background-image: url(imgs/background.png);
+}
+
+QLineEdit {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #00FFFF;
+}
