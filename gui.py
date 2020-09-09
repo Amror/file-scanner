@@ -148,7 +148,7 @@ class MainWindow(QMainWindow):
             if self.file_output.isChecked():
                 self.txt_output_to_file()
 
-    def scan(self):
+    def scan(self) -> None:
         """Starts the scanning process if an API key and a path are inserted"""
         path = self.scan_path.text()
         if path and self.api_key:
@@ -164,7 +164,7 @@ class MainWindow(QMainWindow):
             msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
             msg.exec_()
 
-    def add_api_key(self):
+    def add_api_key(self) -> None:
         """Adds an API key for the program from input"""
         key, ok = QInputDialog.getText(self,
                                        'Enter Virus Total API Key',
@@ -184,7 +184,7 @@ class MainWindow(QMainWindow):
             f.write(last_scan)
 
 
-def window():
+def window() -> None:
     app = QApplication(sys.argv)
     with open('style.css', 'r') as f:
         style = f.read()
