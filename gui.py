@@ -152,10 +152,11 @@ class MainWindow(QMainWindow):
         """Starts the scanning process if an API key and a path are inserted"""
         path = self.scan_path.text()
         if path and self.api_key:
+            # Start report fetching and parsing if a path and an API key are inserted
             loop = asyncio.get_event_loop()
             loop.run_until_complete(self.append_report(path))
         else:
-            # Create a message box if an API key or a path is missing`
+            # Create a message box if an API key or a path is missing
             msg = QtWidgets.QMessageBox()
             msg.setIcon(QtWidgets.QMessageBox.Information)
             msg.setText('Please enter an API key and a file/folder path!')
