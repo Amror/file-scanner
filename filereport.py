@@ -6,7 +6,7 @@ from filepath import get_files_path
 
 async def get_file_report(path: str, apikey: str, session: aiohttp.ClientSession, *, manual: bool = False,
                           show_undetected: bool) -> str:
-    """Queries VT serves and returns a parsed report"""
+    """Queries VT servers and returns a parsed report"""
     digest = get_file_hash(path, manual=manual)
     params = {'apikey': apikey, 'resource': digest}
     async with session.get('https://www.virustotal.com/vtapi/v2/file/report', params=params) as response:
